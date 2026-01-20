@@ -1,0 +1,45 @@
+.Container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 250px;
+  padding: 20px;
+  background-color: #3b6ff3b6;
+  border-radius: 16px;
+}
+
+/* 🔹 CLASE BASE (NUNCA SE QUITA) */
+.menu-item {
+  background-color: white;
+  color: #333;
+  padding: 12px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* 🔹 COMPORTAMIENTO COMÚN */
+.menu-item:hover {
+  background-color: #1e90ff;
+  color: white;
+  transform: scale(1.03);
+}
+
+/* 🔹 CLASES ESPECÍFICAS (opcional) */
+/* .about {}
+.location {}
+.experience {} */
+
+/* 🔹 GALERÍA */
+.images {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.images img {
+  width: 60px;
+  height: 60px;
+  border-radius: 8px;
+  object-fit: cover;
+}

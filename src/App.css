@@ -1,0 +1,18 @@
+.Principal {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.Navbar {
+  flex-shrink: 0;
+}
+
+.Layout {
+  flex: 1;          /* 👈 importante para que ocupe el centro */
+  overflow: hidden;
+}
+
+.Footer {
+  flex-shrink: 0;
+}

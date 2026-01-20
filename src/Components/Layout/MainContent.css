@@ -1,0 +1,21 @@
+.main {
+  padding: 20px;
+}
+
+button {
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+}
+
+.quote {
+  margin-top: 15px;
+  padding: 12px;
+  background: #f4f4f4;
+  border-radius: 10px;
+}
+
+.error {
+  color: red;
+}
