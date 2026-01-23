@@ -1,18 +1,18 @@
-.Principal {
+.Principal{
+  height: 100vh;              /* clave: altura fija de pantalla */
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
 }
 
-.Navbar {
-  flex-shrink: 0;
+.Navbar{
+  flex-shrink: 0;             /* no se aplasta */
 }
 
-.Layout {
-  flex: 1;          /* 👈 importante para que ocupe el centro */
-  overflow: hidden;
+.Layout{
+  flex: 1;                    /* toma todo el espacio entre header y footer */
+  overflow: hidden;           /* evita que el body scrollee */
 }
 
-.Footer {
+.Footer{
   flex-shrink: 0;
 }

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./MainContent.css";
- 
+
 function MainContent() {
   const [quote, setQuote] = useState("");
   const [author, setAuthor] = useState("");
@@ -28,22 +28,47 @@ function MainContent() {
 
   return (
     <div className="main">
-      <h1>API sencilla (Quotes)</h1>
+      {/* ===== HERO ===== */}
+      <section className="section hero">
+        <h1>API sencilla (Quotes)</h1>
+        <p>Esta sección es corta (parte superior).</p>
 
-      <button onClick={getQuote} disabled={loading}>
-        Obtener frase
-      </button>
+        <button onClick={getQuote} disabled={loading}>
+          Obtener frase
+        </button>
 
-      {loading && <p>Cargando...</p>}
-      {error && <p className="error">{error}</p>}
+        {loading && <p>Cargando...</p>}
+        {error && <p className="error">{error}</p>}
+      </section>
 
+      {/* ===== QUOTE ===== */}
       {quote && (
-        <div className="quote-box">
-          <p>"{quote}"</p>
-          <p className="author">—{author}—</p>
-          <p>—{length}— length of the quote</p>
-        </div>
+        <section className="section quote">
+          <div className="quote-box">
+            <p>"{quote}"</p>
+            <p className="author">— {author} —</p>
+            <p className="length">Longitud: {length}</p>
+          </div>
+        </section>
       )}
+
+      {/* ===== CONTENIDO LARGO ===== */}
+      <section className="section content">
+        <h2>Contenido largo para probar scroll</h2>
+
+        {[...Array(20)].map((_, i) => (
+          <p key={i}>
+            Párrafo #{i + 1} — Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Commodi, distinctio, aspernatur nemo incidunt repellat vero.
+          </p>
+        ))}
+      </section>
+
+      {/* ===== FOOTER INTERNO ===== */}
+      <section className="section end">
+        <h3>Fin del contenido</h3>
+        <p>Si llegaste aquí, el scroll funciona correctamente ✅</p>
+      </section>
     </div>
   );
 }

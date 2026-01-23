@@ -1,18 +1,15 @@
-.layout {
+.layout{
   display: flex;
-  height: 100%;
-  min-height: 100%;
+  height: 100%;               /* clave para que el área central tenga altura real */
 }
 
-.left {
-  width: 280px;
+.left{
+  width: 220px;
   flex-shrink: 0;
-  border-right: 1px solid #ddd;
-  padding: 16px;
 }
 
-.right {
+.right{
   flex: 1;
-  padding: 16px;
-  overflow: auto;
+  overflow-y: auto;           /* ✅ aquí está el scroll */
+  padding: 1.5rem;
 }
