@@ -1,19 +1,20 @@
 import "./Navbar.css";
+import logo from "../assets/logo.jpeg"; // ✅ ESTA es la ruta correcta
 
-function Navbar(){
-    return (
-        <div className = "container">
-            <div className = "Title">
-                <h1>Agencia de viajes</h1>
-            </div>
-            <div className = "Menu">
-                <ul>
-                    <li> Contacto</li>
-                    <li>Reservas</li>
-                </ul>
-            </div>
-        </div>
-    );
+function Navbar() {
+  return (
+    <nav className="navbar">
+      <div className="navbar-left">
+        <img src={logo} alt="Best By Travel Logo" className="logo" />
+
+        <span className="subtitle">Agencia de Viajes</span>
+      </div>
+
+      <ul className="navbar-menu">
+        <li>Contacto </li>
+      </ul>
+    </nav>
+  );
 }
 
 export default Navbar;
