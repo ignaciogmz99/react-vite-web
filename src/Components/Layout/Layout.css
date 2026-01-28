@@ -10,6 +10,7 @@
 
 .right{
   flex: 1;
+  min-width: 0;
   overflow-y: auto;           /* ✅ aquí está el scroll */
-  padding: 1.5rem;
+  padding: 2.5rem;
 }

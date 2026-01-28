@@ -11,7 +11,6 @@ function Layout() {
       <div className="left">
         <SideMenu />
       </div>
-
       <div className="right">
         <Routes>
           <Route path="/" element={<MainContent />} />
