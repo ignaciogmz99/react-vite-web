@@ -1,45 +1,101 @@
+/* Contenedor del menú */
 .Container {
+  width: 240px;
+  padding: 18px;
   display: flex;
   flex-direction: column;
-  gap: 16px;
-  width: 250px;
-  padding: 20px;
-  background-color: #3b6ff3b6;
-  border-radius: 16px;
-}
-
-/* 🔹 CLASE BASE (NUNCA SE QUITA) */
-.menu-item {
-  background-color: white;
-  color: #333;
-  padding: 12px;
+  gap: 14px;
   border-radius: 10px;
+
+  /* Más neutral y elegante que el naranja sólido */
+  background: rgba(249, 162, 12, 0.586);
+}
+
+/* Card base */
+.menu-item {
+  background: #ffffff;
+  color: #0f1b2d;
+  padding: 14px 14px;
+  border-radius: 14px;
   cursor: pointer;
-  transition: all 0.3s ease;
+
+  /* “Card pro” */
+  border: 1px solid rgba(15, 27, 45, 0.08);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.06);
+
+  transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
 }
 
-/* 🔹 COMPORTAMIENTO COMÚN */
+/* Layout interno (icono + texto) */
+.menu-item .row {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+/* Icono como círculo */
+.menu-item .icon {
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  display: grid;
+  place-items: center;
+
+  /* Acento que combina con navbar azul */
+  background: rgba(10, 58, 106, 0.1);
+  color: #0a3a6a;
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+/* Títulos (NO uses h1 aquí: mejor tamaño controlado) */
+.menu-item h3 {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+}
+
+/* Subtexto opcional */
+.menu-item p {
+  margin: 4px 0 0;
+  font-size: 12.5px;
+  color: rgba(15, 27, 45, 0.65);
+  line-height: 1.25rem;
+}
+
+/* Hover elegante (sin azul chillón) */
 .menu-item:hover {
-  background-color: #1e90ff;
-  color: white;
-  transform: scale(1.03);
+  transform: translateY(-2px);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.10);
+  border-color: rgba(10, 58, 106, 0.35);
 }
 
-/* 🔹 CLASES ESPECÍFICAS (opcional) */
-/* .about {}
-.location {}
-.experience {} */
+/* Si quieres “estado activo” después lo usamos */
+.menu-item.active {
+  border-color: rgba(10, 58, 106, 0.55);
+  box-shadow: 0 14px 28px rgba(10, 58, 106, 0.12);
+}
 
-/* 🔹 GALERÍA */
+/* Galería */
 .images {
   display: flex;
   gap: 10px;
   margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px dashed rgba(15, 27, 45, 0.18);
 }
 
 .images img {
-  width: 60px;
-  height: 60px;
-  border-radius: 8px;
+  width: 58px;
+  height: 58px;
+  border-radius: 12px;
   object-fit: cover;
+  border: 1px solid rgba(15, 27, 45, 0.10);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
+  transition: transform 160ms ease;
+}
+
+.images img:hover {
+  transform: scale(1.04);
 }

@@ -30,8 +30,8 @@ function MainContent() {
     <div className="main">
       {/* ===== HERO ===== */}
       <section className="section hero">
-        <h1>API sencilla (Quotes)</h1>
-        <p>Esta sección es corta (parte superior).</p>
+        <h1>Best by Travel</h1>
+        <p>Agencia de viajes en Plaza Arboledas</p>
 
         <button onClick={getQuote} disabled={loading}>
           Obtener frase

@@ -1,16 +1,15 @@
-.layout{
+.layout {
   display: flex;
-  height: 100%;               /* clave para que el área central tenga altura real */
+  height: 100vh;        /* 🔑 ocupa toda la pantalla */
 }
 
-.left{
-  width: 220px;
+.left {
+  width: 250px;
   flex-shrink: 0;
+  height: 100%;
 }
 
-.right{
+.right {
   flex: 1;
-  min-width: 0;
-  overflow-y: auto;           /* ✅ aquí está el scroll */
-  padding: 2.5rem;
+  overflow-y: auto;
 }
