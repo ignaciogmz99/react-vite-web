@@ -21,35 +21,40 @@
   font-size: 14px;
 }
 
+/* ✅ Ahora en línea */
 .navbar-menu {
   list-style: none;
+  display: flex;
+  gap: 18px;
+  margin: 0;
+  padding: 0;
 }
 
-.contacto-item {
+.menu-item-popover {
   position: relative;
 }
 
-.contacto-text-trigger {
+/* Texto trigger sin cambiar “diseño” (texto clickeable) */
+.menu-text-trigger {
   cursor: pointer;
   font-weight: 500;
 }
 
 /* ===== POPOVER ===== */
-
-.contacto-popover {
+.menu-popover {
   position: absolute;
   top: 40px;
   right: 0;
   background: white;
   color: black;
-  width: 260px;
+  width: 280px;
   padding: 16px;
   border-radius: 10px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
   z-index: 100;
 }
 
-.contacto-close {
+.menu-close {
   position: absolute;
   top: 8px;
   right: 10px;
@@ -59,30 +64,50 @@
   cursor: pointer;
 }
 
-.contacto-popover-title {
+.menu-popover-title {
   font-weight: bold;
   margin-bottom: 12px;
 }
 
-/* ===== CONTENIDO ===== */
-
-.contacto-popover-body {
+.menu-popover-body {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 14px;
 }
 
-.contacto-row {
+.menu-row {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 12px;
 }
 
-.contacto-icon {
+.menu-icon {
   font-size: 20px;
+  line-height: 1.2;
 }
 
-.contacto-number {
+.menu-subtext {
   font-size: 14px;
   color: #444;
+  margin-top: 2px;
+}
+
+.menu-link {
+  display: inline-block;
+  text-decoration: none;
+  font-weight: 600;
+}
+.menu-link:hover {
+  text-decoration: underline;
+}
+
+.menu-text-trigger {
+  cursor: pointer;
+  font-weight: 500;
+  transition: color 0.25s ease;
+}
+
+/* ⭐ HOVER DORADO */
+.menu-text-trigger:hover {
+  color: #f5c542;   /* dorado elegante */
 }

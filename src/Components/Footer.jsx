@@ -1,36 +1,42 @@
-import { useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import "./Footer.css";
 
 function Footer() {
-  const [count, setCount] = useState(0);
   const navigate = useNavigate();
   const location = useLocation();
 
   const handleViajesClick = () => {
     if (location.pathname === "/viajes") {
-      navigate("/");          // regresar a MainContent
+      navigate("/");
     } else {
-      navigate("/viajes");    // ir a Viajes
+      navigate("/viajes");
     }
+  };
+
+  // 🔥 URLs redes sociales (pon las reales luego)
+  const openFacebook = () => {
+    window.open("https://www.facebook.com/", "_blank");
+  };
+
+  const openInstagram = () => {
+    window.open("https://www.instagram.com/", "_blank");
   };
 
   return (
     <div className="footer">
-      <div>
-        <p>Valor actual: {count}</p>
-        <button onClick={() => setCount(count + 1)}>Incrementar</button>
-      </div>
 
-      <div>
-        <button onClick={() => setCount(count - 1)}>Decrementar</button>
-      </div>
+      <button className="footer-btn viajes" onClick={handleViajesClick}>
+        Viajes ✈️
+      </button>
 
-      <div>
-        <button className="go-viajes" onClick={handleViajesClick}>
-          {location.pathname === "/viajes" ? "Volver al Inicio 🏠" : "Ir a Viajes ✈️"}
-        </button>
-      </div>
+      <button className="footer-btn facebook" onClick={openFacebook}>
+        Facebook
+      </button>
+
+      <button className="footer-btn instagram" onClick={openInstagram}>
+        Instagram
+      </button>
+
     </div>
   );
 }

@@ -1,15 +1,17 @@
 .layout {
   display: flex;
-  height: 100vh;        /* 🔑 ocupa toda la pantalla */
+  justify-content: center;   /* 🔥 centra horizontalmente */
+  min-height: 100vh;         /* ocupa alto completo */
+  background: #f5f7fb;       /* opcional: fondo suave para ver la sangría */
 }
 
-.left {
-  width: 250px;
-  flex-shrink: 0;
-  height: 100%;
-}
-
-.right {
-  flex: 1;
+/* Este será el contenedor real de la página */
+.center {
+  width: 100%;
+  max-width: none;
   overflow-y: auto;
+}
+
+.page-padding {
+  padding: 24px 32px;
 }

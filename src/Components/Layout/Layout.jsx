@@ -8,10 +8,10 @@ import Viajes from "../../pages/Viajes.jsx";
 function Layout() {
   return (
     <div className="layout">
-      <div className="left">
+      {/* <div className="left">
         <SideMenu />
-      </div>
-      <div className="right">
+      </div> */}
+      <div className="center">
         <Routes>
           <Route path="/" element={<MainContent />} />
           <Route path="/viajes" element={<Viajes />} />
