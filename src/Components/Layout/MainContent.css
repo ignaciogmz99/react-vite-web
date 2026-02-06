@@ -60,3 +60,65 @@
   font-weight: 600;
   background: white;
 }
+
+/* ===== Barra de categorías tipo la imagen ===== */
+.catbar {
+  margin-top: -22px;                /* sube un poco sobre el hero (opcional) */
+}
+
+.catbar-inner {
+  background: #fff;
+  border-radius: 16px;
+  padding: 14px 18px;
+
+  display: flex;
+  gap: 18px;
+  justify-content: center;
+  align-items: center;
+
+  overflow-x: auto;                 /* ✅ si no cabe, hace scroll horizontal */
+  -webkit-overflow-scrolling: touch;
+
+  box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+  border: 1px solid rgba(0,0,0,0.06);
+}
+
+.catbar-inner::-webkit-scrollbar {
+  height: 8px;
+}
+.catbar-inner::-webkit-scrollbar-thumb {
+  background: rgba(0,0,0,0.15);
+  border-radius: 999px;
+}
+
+.cat-item {
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  padding: 10px 10px;
+  border-radius: 12px;
+
+  min-width: 92px;
+  display: grid;
+  place-items: center;
+  gap: 6px;
+
+  color: #2b2b2b;
+  transition: transform .15s ease, background .15s ease;
+}
+
+.cat-item:hover {
+  background: rgba(210, 137, 27, 0.10); /* doradito suave */
+  transform: translateY(-1px);
+}
+
+.cat-icon {
+  font-size: 28px;
+  line-height: 1;
+}
+
+.cat-label {
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
+}
