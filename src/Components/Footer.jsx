@@ -15,7 +15,7 @@ function Footer() {
 
   // 🔥 URLs redes sociales (pon las reales luego)
   const openFacebook = () => {
-    window.open("https://www.facebook.com/", "_blank");
+    window.open("https://www.facebook.com/share/1Dj9BDc25m/?mibextid=wwXIfr", "_blank");
   };
 
   const openInstagram = () => {

@@ -2,11 +2,15 @@ import "./MainContent.css";
 import heroImg from "../../assets/test8.jpg";
 
 // ✅ imágenes
-import pack1 from "../../assets/foto1.jpg";
-import pack2 from "../../assets/foto2.jpg";
-import pack3 from "../../assets/foto3.jpg";
-import pack4 from "../../assets/foto5.jpg";
-import pack5 from "../../assets/foto5.jpg";
+import pack1 from "../../assets/turquia.png";
+import pack2 from "../../assets/italiacarrusel.png";
+import pack3 from "../../assets/japoncarrusel.png";
+import pack4 from "../../assets/horizontesasiaticos.png";
+import pack5 from "../../assets/vikingocarrusel.webp";
+import pack6 from "../../assets/perucarrusel.png";
+import pack7 from "../../assets/newyork.png";
+import pack8 from "../../assets/centro.png";
+import pack9 from "../../assets/maya.png";
 
 import Banner from "./Banner";
 import BarraCategorias from "./BarraCategorias";
@@ -26,11 +30,15 @@ function MainContent() {
   ];
 
   const paquetes = [
-    { id: 1, title: "Nueva York Clásica", nights: "4 noches", from: "Desde", price: "26,587 MXN", img: pack1 },
-    { id: 2, title: "Lisboa + Madrid", nights: "20 noches", from: "Desde", price: "99,527 MXN", img: pack2 },
-    { id: 3, title: "Lisboa + Oporto", nights: "13 noches", from: "Desde", price: "71,769 MXN", img: pack3 },
-    { id: 4, title: "Andalucía + Costa del Sol", nights: "9 noches", from: "Desde", price: "47,116 MXN", img: pack4 },
-    { id: 5, title: "Andalucía + Costa del Sol", nights: "9 noches", from: "Desde", price: "47,116 MXN", img: pack5 },
+    { id: 1, title: "", nights: "", from: "", price: "", img: pack1 },
+    { id: 2, title: "", nights: "", from: "", price: "", img: pack2 },
+    { id: 3, title: "", nights: "", from: "", price: "", img: pack3 },
+    { id: 4, title: "", nights: "", from: "", price: "", img: pack4 },
+    { id: 5, title: "", nights: "", from: "", price: "", img: pack5 },
+    { id: 6, title: "", nights: "", from: "", price: "", img: pack6 },
+    { id: 7, title: "", nights: "", from: "", price: "", img: pack7 },
+    { id: 8, title: "", nights: "", from: "", price: "", img: pack8 },
+    { id: 9, title: "", nights: "", from: "", price: "", img: pack9 },
   ];
 
   return (

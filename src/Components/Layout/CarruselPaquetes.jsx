@@ -113,29 +113,10 @@ function CarruselPaquetes({ paquetes }) {
             tabIndex={-1}
           >
             {paquetes.map((p) => (
-              <article className="deal-card" key={p.id}>
-                <img className="deal-img" src={p.img} alt={p.title} />
-                <div className="deal-shade" />
-
-                <div className="deal-content">
-                  <h3 className="deal-title">{p.title}</h3>
-
-                  <div className="deal-meta">
-                    <span>{p.nights}</span>
-                  </div>
-
-                  <button className="deal-cta" type="button">
-                    Paquete de vacaciones
-                  </button>
-
-                  <div className="deal-price">
-                    <span className="deal-from">{p.from}</span>
-                    <span className="deal-amount">{p.price}</span>
-                    <span className="deal-person">Por persona</span>
-                  </div>
-                </div>
-              </article>
-            ))}
+                <article className="deal-card only-image" key={p.id}>
+                  <img className="deal-img" src={p.img} alt={p.title} />
+                </article>
+              ))}
           </div>
 
           <div className="deals-dots" role="tablist" aria-label="Páginas del carrusel">
