@@ -1,6 +1,6 @@
 /* ✅ El layout ocupa la pantalla y evita que el body scrollee */
 .layout {
-  height: 100vh;              /* 🔑 altura fija */
+  height: 100%;              /* 🔑 altura fija */
   display: flex;
   justify-content: center;
   background: #f5f7fb;

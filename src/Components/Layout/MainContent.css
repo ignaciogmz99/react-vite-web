@@ -1,4 +1,5 @@
 .main {
+  margin-top: 0px;
   padding: 0;
 }
 
@@ -6,33 +7,32 @@
 .hero {
   position: relative;
   width: 100vw;
-  height: 30vh;              /* 🔥 altura relativa a pantalla */
-  min-height: 420px;         /* nunca más pequeño que esto */
-  max-height: 550px;         /* evita que se vea gigante en monitores grandes */
+  height: 30vh;
+  min-height: 420px;
+  max-height: 550px;
 
   margin-left: calc(-50vw + 50%);
 
   background-size: cover;
-  background-position: center 90%;  /* 🔥 clave */
+  background-position: center 90%;
   background-repeat: no-repeat;
 
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
 }
-/* Overlay oscuro para leer texto */
+
 .hero-overlay {
   position: absolute;
   inset: 0;
   background: linear-gradient(
     90deg,
-    rgba(0,0,0,0.55) 0%,
-    rgba(0,0,0,0.25) 45%,
-    rgba(0,0,0,0.10) 100%
+    rgba(0, 0, 0, 0.55) 0%,
+    rgba(0, 0, 0, 0.25) 45%,
+    rgba(0, 0, 0, 0.1) 100%
   );
 }
 
-/* Texto sobre imagen */
 .hero-content {
   position: relative;
   z-index: 2;
@@ -51,19 +51,9 @@
   font-size: 17px;
 }
 
-/* Botón estilo agencia */
-.primary {
-  padding: 12px 18px;
-  border-radius: 10px;
-  border: none;
-  cursor: pointer;
-  font-weight: 600;
-  background: white;
-}
-
-/* ===== Barra de categorías tipo la imagen ===== */
+/* ===== Barra de categorías ===== */
 .catbar {
-  margin-top: -22px;                /* sube un poco sobre el hero (opcional) */
+  margin-top: -22px;
 }
 
 .catbar-inner {
@@ -76,18 +66,18 @@
   justify-content: center;
   align-items: center;
 
-  overflow-x: auto;                 /* ✅ si no cabe, hace scroll horizontal */
+  overflow-x: auto;
   -webkit-overflow-scrolling: touch;
 
-  box-shadow: 0 12px 30px rgba(0,0,0,0.08);
-  border: 1px solid rgba(0,0,0,0.06);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(0, 0, 0, 0.06);
 }
 
 .catbar-inner::-webkit-scrollbar {
   height: 8px;
 }
 .catbar-inner::-webkit-scrollbar-thumb {
-  background: rgba(0,0,0,0.15);
+  background: rgba(0, 0, 0, 0.15);
   border-radius: 999px;
 }
 
@@ -104,11 +94,11 @@
   gap: 6px;
 
   color: #2b2b2b;
-  transition: transform .15s ease, background .15s ease;
+  transition: transform 0.15s ease, background 0.15s ease;
 }
 
 .cat-item:hover {
-  background: rgba(210, 137, 27, 0.10); /* doradito suave */
+  background: rgba(210, 137, 27, 0.1);
   transform: translateY(-1px);
 }
 
@@ -123,7 +113,7 @@
   white-space: nowrap;
 }
 
-/* ====== CARRUSEL (Paquetes) ====== */
+/* ====== CARRUSEL ====== */
 .deals {
   margin-top: 22px;
 }
@@ -152,14 +142,14 @@
   width: 40px;
   height: 40px;
   border-radius: 999px;
-  border: 1px solid rgba(0,0,0,0.10);
+  border: 1px solid rgba(0, 0, 0, 0.1);
   background: #fff;
   cursor: pointer;
   font-size: 24px;
   line-height: 1;
   display: grid;
   place-items: center;
-  box-shadow: 0 10px 24px rgba(0,0,0,0.08);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
 }
 
 .nav-btn:hover {
@@ -170,25 +160,29 @@
   position: relative;
 }
 
+/* ✅ IMPORTANT: snap suave + evita “trabas” + gesto vertical se va a la página */
 .deals-track {
   display: flex;
   gap: 16px;
   overflow-x: auto;
   padding: 6px 4px 14px;
-  scroll-snap-type: x mandatory;
+
+  scroll-snap-type: x proximity; /* ✅ menos agresivo */
   scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
+
+  overscroll-behavior: contain;  /* ✅ evita rebotes raros */
+  touch-action: pan-y;           /* ✅ vertical -> página */
 }
 
 .deals-track::-webkit-scrollbar {
   height: 10px;
 }
 .deals-track::-webkit-scrollbar-thumb {
-  background: rgba(0,0,0,0.14);
+  background: rgba(0, 0, 0, 0.14);
   border-radius: 999px;
 }
 
-/* Card tamaño responsive (tipo la imagen) */
 .deal-card {
   flex: 0 0 auto;
   width: clamp(240px, 28vw, 360px);
@@ -197,15 +191,15 @@
   position: relative;
   overflow: hidden;
   scroll-snap-align: start;
-  box-shadow: 0 14px 30px rgba(0,0,0,0.12);
-  border: 1px solid rgba(0,0,0,0.08);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.12);
+  border: 1px solid rgba(0, 0, 0, 0.08);
   background: #000;
 }
 
 .deal-img {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* ✅ sin deformar */
+  object-fit: cover;
   display: block;
 }
 
@@ -214,9 +208,9 @@
   inset: 0;
   background: linear-gradient(
     180deg,
-    rgba(0,0,0,0.55) 0%,
-    rgba(0,0,0,0.25) 45%,
-    rgba(0,0,0,0.55) 100%
+    rgba(0, 0, 0, 0.55) 0%,
+    rgba(0, 0, 0, 0.25) 45%,
+    rgba(0, 0, 0, 0.55) 100%
   );
 }
 
@@ -235,7 +229,6 @@
   font-size: 28px;
   font-weight: 900;
   letter-spacing: -0.3px;
-  text-transform: none;
   max-width: 95%;
 }
 
@@ -256,9 +249,9 @@
   padding: 10px 14px;
   cursor: pointer;
   font-weight: 800;
-  background: #0b4ea2; /* azul tipo agencia */
+  background: #0b4ea2;
   color: white;
-  box-shadow: 0 10px 22px rgba(0,0,0,0.18);
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.18);
 }
 
 .deal-cta:hover {
@@ -302,11 +295,21 @@
   height: 8px;
   border-radius: 999px;
   border: 0;
-  background: rgba(0,0,0,0.25);
+  background: rgba(0, 0, 0, 0.25);
   cursor: pointer;
 }
 
 .dot.active {
-  background: rgba(11,78,162,0.95);
+  background: rgba(11, 78, 162, 0.95);
   width: 26px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 34px;
+  }
+  .deal-card {
+    height: 390px;
+  }
 }

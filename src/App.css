@@ -1,16 +1,28 @@
+html, body, #root {
+  height: 100%;
+  margin: 0;
+}
+
+/* ✅ IMPORTANTÍSIMO: el body NO debe scrollear */
+body {
+  overflow: hidden;
+}
+
+
 .Principal{
-  height: 100vh;              /* clave: altura fija de pantalla */
+  height: 100vh;
   display: flex;
   flex-direction: column;
 }
 
 .Navbar{
-  flex-shrink: 0;             /* no se aplasta */
+  flex-shrink: 0;
 }
 
 .Layout{
-  flex: 1;                    /* toma todo el espacio entre header y footer */
-  overflow: hidden;           /* evita que el body scrollee */
+  flex: 1;
+  height: 100%;        /* ✅ añade esto */
+  overflow: hidden;    /* ✅ el scroll NO es aquí, es adentro */
 }
 
 .Footer{
