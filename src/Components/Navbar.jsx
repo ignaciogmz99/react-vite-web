@@ -36,7 +36,7 @@ function Navbar() {
     <nav className="navbar">
       <div className="navbar-left">
         <img src={logo} alt="Best By Travel Logo" className="logo" />
-        <span className="subtitle">Agencia de Viajes</span>
+        {/* <span className="subtitle"></span> */}
       </div>
 
       {/* ✅ Los 3 en línea */}

@@ -1,0 +1,49 @@
+/* ===== HERO ===== */
+.hero {
+  position: relative;
+  width: 100vw;
+  height: 20vh;
+  min-height: 420px;
+  max-height: 550px;
+
+  margin-left: calc(-50vw + 50%);
+
+  background-size: cover;
+  background-position: center 90%;
+  background-repeat: no-repeat;
+
+  display: flex;
+  align-items: flex-end;       /* 👈 texto abajo */
+  justify-content: flex-start; /* 👈 izquierda */
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: transparent;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 650px;
+  padding: 32px;
+  padding-bottom: 20px; /* separación del borde inferior */
+  color: white;
+}
+
+.hero-content h1 {
+  margin: 0 0 8px;
+  font-size: 44px;
+}
+
+.hero-content p {
+  margin-bottom: 18px;
+  font-size: 17px;
+}
+
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 34px;
+  }
+}
