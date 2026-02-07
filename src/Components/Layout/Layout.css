@@ -1,17 +1,28 @@
+/* ✅ El layout ocupa la pantalla y evita que el body scrollee */
 .layout {
+  height: 100vh;              /* 🔑 altura fija */
   display: flex;
-  justify-content: center;   /* 🔥 centra horizontalmente */
-  min-height: 100vh;         /* ocupa alto completo */
-  background: #f5f7fb;       /* opcional: fondo suave para ver la sangría */
+  justify-content: center;
+  background: #f5f7fb;
+  overflow: hidden;           /* 🔑 el scroll NO es del body */
 }
 
-/* Este será el contenedor real de la página */
+/* ✅ Este contenedor es el que scrollea */
 .center {
   width: 100%;
-  max-width: none;
-  overflow-y: auto;
+  height: 100%;               /* 🔑 ahora overflow-y funciona */
+  overflow-y: auto;           /* ✅ scroll vertical real */
+  overflow-x: hidden;         /* evita scroll horizontal por el hero 100vw */
 }
 
+/* Tu sangría para el contenido debajo del hero */
 .page-padding {
   padding: 24px 32px;
+}
+
+/* opcional: en móvil reduce padding */
+@media (max-width: 768px) {
+  .page-padding {
+    padding: 18px 16px;
+  }
 }
