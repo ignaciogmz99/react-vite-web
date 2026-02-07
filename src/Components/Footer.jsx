@@ -19,15 +19,15 @@ function Footer() {
   };
 
   const openInstagram = () => {
-    window.open("https://www.instagram.com/", "_blank");
+    window.open("https://www.instagram.com/bestbytravel?igsh=MTBrYzVvNmJ4Z21iNg%3D%3D&utm_source=qr", "_blank");
   };
 
   return (
     <div className="footer">
 
-      <button className="footer-btn viajes" onClick={handleViajesClick}>
+      {/* <button className="footer-btn viajes" onClick={handleViajesClick}>
         Viajes ✈️
-      </button>
+      </button> */}
 
       <button className="footer-btn facebook" onClick={openFacebook}>
         Facebook
