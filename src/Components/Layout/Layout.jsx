@@ -2,7 +2,6 @@ import "./Layout.css";
 import { Routes, Route } from "react-router-dom";
 
 import MainContent from "./MainContent.jsx";
-import Viajes from "../../pages/Viajes.jsx";
 
 function Layout() {
   return (

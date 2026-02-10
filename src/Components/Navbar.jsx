@@ -30,7 +30,7 @@ function Navbar() {
 
   // ✅ Cambia esto por tu link real:
   const googleMapsUrl = "https://maps.app.goo.gl/6zLmp1wdZVnfDDgJ7";
-  const direccionTexto = "Plaza Fiesta Arboledas 2500, Local 30K, Guadalajara, Mexico, 44530";
+  const direccionTexto = "Plaza Fiesta Arboledas 2500, Local 7H, Guadalajara, Mexico, 44530";
 
   return (
     <nav className="navbar">
@@ -66,7 +66,7 @@ function Navbar() {
                   <span className="menu-icon">📞</span>
                   <div>
                     <strong>Ignacio Gomez</strong>
-                    <div className="menu-subtext">(+52) 333 419 3334</div>
+                    <div className="menu-subtext">(+52) 33 1070 2655</div>
                   </div>
                 </div>
 
@@ -74,7 +74,7 @@ function Navbar() {
                   <span className="menu-icon">📞</span>
                   <div>
                     <strong>Karen Gomez</strong>
-                    <div className="menu-subtext">(+52) 334 012 1334</div>
+                    <div className="menu-subtext">(+52) 33 1109 0774</div>
                   </div>
                 </div>
               </div>
