@@ -59,7 +59,7 @@
   overflow-x: auto;
   padding: 6px 18px 14px;
 
-  scroll-snap-type: x proximity;
+  scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
   scroll-padding-left: 18px;
   scroll-padding-right: 18px;
@@ -67,7 +67,7 @@
 
   overscroll-behavior-x: contain;
   overscroll-behavior-y: auto;
-  touch-action: pan-y;
+  touch-action: pan-x;
 }
 
 .deals-track::-webkit-scrollbar {
@@ -87,6 +87,7 @@
   position: relative;
   overflow: hidden;
   scroll-snap-align: start;
+  scroll-snap-stop: always;
   box-shadow: 0 14px 30px rgba(0, 0, 0, 0.12);
   border: 1px solid rgba(0, 0, 0, 0.08);
   background: #000;

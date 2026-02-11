@@ -6,25 +6,31 @@ function Navbar() {
   const [open, setOpen] = useState(null); // "contacto" | "direccion" | "quienes" | null
   const wrapperRef = useRef(null);
 
-  useEffect(() => {
-    const onMouseDown = (e) => {
-      if (open && wrapperRef.current && !wrapperRef.current.contains(e.target)) {
-        setOpen(null);
-      }
-    };
+useEffect(() => {
+  const onPointerDown = (e) => {
+    // Si hay un popover abierto y el click/touch fue fuera del wrapper, lo cerramos
+    if (open && wrapperRef.current && !wrapperRef.current.contains(e.target)) {
+      setOpen(null);
+    }
+  };
 
-    const onKeyDown = (e) => {
-      if (e.key === "Escape") setOpen(null);
-    };
+  const onKeyDown = (e) => {
+    if (e.key === "Escape") setOpen(null);
+  };
 
-    document.addEventListener("mousedown", onMouseDown);
-    document.addEventListener("keydown", onKeyDown);
+  // Desktop
+  document.addEventListener("mousedown", onPointerDown);
+  // Mobile (touch)
+  document.addEventListener("touchstart", onPointerDown, { passive: true });
+  // Teclado
+  document.addEventListener("keydown", onKeyDown);
 
-    return () => {
-      document.removeEventListener("mousedown", onMouseDown);
-      document.removeEventListener("keydown", onKeyDown);
-    };
-  }, [open]);
+  return () => {
+    document.removeEventListener("mousedown", onPointerDown);
+    document.removeEventListener("touchstart", onPointerDown);
+    document.removeEventListener("keydown", onKeyDown);
+  };
+}, [open]);
 
   const toggle = (key) => setOpen((prev) => (prev === key ? null : key));
 
