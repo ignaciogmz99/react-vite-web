@@ -57,17 +57,17 @@
   display: flex;
   gap: 16px;
   overflow-x: auto;
-  padding: 6px 18px 14px;
-
-  scroll-snap-type: x mandatory;
-  scroll-behavior: smooth;
-  scroll-padding-left: 18px;
-  scroll-padding-right: 18px;
   -webkit-overflow-scrolling: touch;
 
-  overscroll-behavior-x: contain;
-  overscroll-behavior-y: auto;
+  padding: 6px 18px 14px;
+
+  /* ✅ comportamiento “barra”: swipe libre horizontal */
   touch-action: pan-x;
+
+  /* ✅ evita rebote raro horizontal */
+  overscroll-behavior-x: contain;
+
+  /* ✅ opcional: barra visible como tu catbar */
 }
 
 .deals-track::-webkit-scrollbar {
