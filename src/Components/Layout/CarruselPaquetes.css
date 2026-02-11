@@ -1,11 +1,15 @@
-/* mismo padding lateral que la barra */
+/* =========================
+   LAYOUT / PADDING
+========================= */
 .page-padding {
   max-width: 1180px;
   margin: 0 auto;
   padding: 0 18px;
 }
 
-/* ====== CARRUSEL ====== */
+/* =========================
+   CARRUSEL
+========================= */
 .deals {
   margin-top: 22px;
 }
@@ -25,211 +29,112 @@
   color: #1f1f1f;
 }
 
-.deals-actions {
-  display: flex;
-  gap: 10px;
-}
-
-.nav-btn {
-  width: 40px;
-  height: 40px;
-  border-radius: 999px;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  background: #fff;
-  cursor: pointer;
-  font-size: 24px;
-  line-height: 1;
-  display: grid;
-  place-items: center;
-  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
-}
-
-.nav-btn:hover {
-  transform: translateY(-1px);
-}
-
-.deals-wrap {
-  position: relative;
-}
-
-/* snap suave + deja scroll vertical normal */
+/* =========================
+   TRACK (scroll horizontal)
+   - Full width (como tu barra)
+========================= */
 .deals-track {
   display: flex;
   gap: 16px;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
 
-  padding: 6px 18px 14px;
-
-  /* ✅ comportamiento “barra”: swipe libre horizontal */
+  /* mismo comportamiento "barra" */
   touch-action: pan-x;
-
-  /* ✅ evita rebote raro horizontal */
   overscroll-behavior-x: contain;
 
-  /* ✅ opcional: barra visible como tu catbar */
+  /* FULL WIDTH aunque el header esté centrado */
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  padding: 6px 18px 14px;
 }
 
 .deals-track::-webkit-scrollbar {
-  height: 10px;
-}
-.deals-track::-webkit-scrollbar-thumb {
-  background: rgba(0, 0, 0, 0.14);
-  border-radius: 999px;
+  height: 12px;               /* más alta para que se vea completa */
 }
 
+.deals-track::-webkit-scrollbar-track {
+  background: rgba(0,0,0,0.10); /* ✅ muestra el canal completo */
+  border-radius: 999px;
+  margin: 0 18px;             /* ✅ que no llegue a las esquinas */
+}
+
+.deals-track::-webkit-scrollbar-thumb {
+  background: rgba(0,0,0,0.25);
+  border-radius: 999px;
+  border: 3px solid rgba(0,0,0,0.10); /* ✅ “padding” visual */
+}
+
+/* ===== Firefox ===== */
+.deals-track {
+  scrollbar-width: auto; /* o 'thin' si la quieres más delgada */
+  scrollbar-color: rgba(0,0,0,0.25) rgba(0,0,0,0.10);
+}
+
+/* =========================
+   CARD
+   - NO forzamos height
+   - No aspect-ratio fijo
+========================= */
 .deal-card {
   flex: 0 0 auto;
   width: clamp(260px, 38vw, 420px);
-  height: auto;          /* ✅ deja crecer */
-  aspect-ratio: auto;    /* ✅ no fuerces proporción */
   border-radius: 18px;
   overflow: hidden;
-  background: transparent;
+
+  background: #fff;
   border: none;
+
+  /* sombra sutil */
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.12);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  cursor: pointer;
 }
 
-/* ✅ imagen completa, altura automática */
+/* =========================
+   IMAGEN
+   ✅ NUNCA RECORTAR:
+   - width 100%
+   - height auto
+   - object-fit: contain (si alguien le mete height fijo por error)
+========================= */
 .deal-img {
   width: 100%;
   height: auto;
-  object-fit: initial;
+  display: block;
+  object-fit: contain;        /* ✅ no recorta */
+  object-position: center;
+}
+
+/* Hover suave */
+.deal-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 22px 50px rgba(0, 0, 0, 0.18);
+}
+
+/* =========================
+   MODO SOLO IMAGEN
+   (ya lo estás usando con: "deal-card only-image")
+========================= */
+.deal-card.only-image {
+  background: #fff;
+}
+
+/* redundante a propósito para garantizar no recorte */
+.deal-card.only-image .deal-img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;        /* ✅ nunca recorta */
   display: block;
 }
 
-.deal-shade {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    180deg,
-    rgba(0, 0, 0, 0.55) 0%,
-    rgba(0, 0, 0, 0.25) 45%,
-    rgba(0, 0, 0, 0.55) 100%
-  );
-}
-
-.deal-content {
-  position: absolute;
-  inset: 0;
-  padding: 18px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  color: #fff;
-}
-
-.deal-title {
-  margin: 0;
-  font-size: 28px;
-  font-weight: 900;
-  letter-spacing: -0.3px;
-  max-width: 95%;
-}
-
-.deal-meta {
-  margin-top: 10px;
-  font-weight: 700;
-  opacity: 0.9;
-  display: flex;
-  gap: 14px;
-  font-size: 13px;
-}
-
-.deal-cta {
-  align-self: flex-start;
-  margin-top: 10px;
-  border: none;
-  border-radius: 999px;
-  padding: 10px 14px;
-  cursor: pointer;
-  font-weight: 800;
-  background: #0b4ea2;
-  color: white;
-  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.18);
-}
-
-.deal-cta:hover {
-  transform: translateY(-1px);
-}
-
-.deal-price {
-  text-align: right;
-  display: grid;
-  gap: 2px;
-}
-
-.deal-from {
-  font-size: 12px;
-  opacity: 0.9;
-  font-weight: 700;
-}
-
-.deal-amount {
-  font-size: 40px;
-  font-weight: 950;
-  letter-spacing: -0.5px;
-}
-
-.deal-person {
-  font-size: 12px;
-  opacity: 0.9;
-  font-weight: 700;
-}
-
-.deals-dots {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  padding: 6px 0 0;
-}
-
-.dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 999px;
-  border: 0;
-  background: rgba(0, 0, 0, 0.25);
-  cursor: pointer;
-}
-
-.dot.active {
-  background: rgba(11, 78, 162, 0.95);
-  width: 26px;
-}
-
+/* =========================
+   MÓVIL
+   - NO forzar alturas
+   - solo ajustamos ancho si quieres
+========================= */
 @media (max-width: 768px) {
   .deal-card {
-    height: 390px;
+    width: clamp(240px, 78vw, 340px);
   }
-}
-
-/* ✅ Track FULL WIDTH aunque el header esté centrado */
-.deals-track{
-  width: 100vw;
-  margin-left: calc(-50vw + 50%);
-  padding-left: 18px;   /* para que no pegue al borde */
-  padding-right: 18px;
-}
-
-/* ====== MODO SOLO IMAGEN ====== */
-
-.deal-card.only-image {
-  background: transparent;
-  border: none;
-  box-shadow: 0 14px 30px rgba(0,0,0,0.12);
-  transition: transform .25s ease, box-shadow .25s ease;
-  cursor: pointer;
-}
-
-/* imagen ocupa todo */
-.deal-card.only-image .deal-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-/* efecto hover estilo agencias top */
-.deal-card.only-image:hover {
-  transform: scale(1.04);
-  box-shadow: 0 22px 50px rgba(0,0,0,0.18);
 }
