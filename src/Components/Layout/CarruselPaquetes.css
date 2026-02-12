@@ -67,7 +67,7 @@
 
 /* ===== Firefox ===== */
 .deals-track {
-  scrollbar-width: auto; /* o 'thin' si la quieres más delgada */
+  scrollbar-width: thin; /* o 'thin' si la quieres más delgada */
   scrollbar-color: rgba(0,0,0,0.25) rgba(0,0,0,0.10);
 }
 
