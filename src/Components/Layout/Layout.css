@@ -1,26 +1,26 @@
-/* ✅ El layout ocupa la pantalla y evita que el body scrollee */
 .layout {
-  height: 100%;              /* 🔑 altura fija */
+  height: 100%;
   display: flex;
   justify-content: center;
   background: #f5f7fb;
-  overflow: hidden;           /* 🔑 el scroll NO es del body */
+  overflow: hidden;
 }
 
-/* ✅ Este contenedor es el que scrollea */
 .center {
   width: 100%;
-  height: 100%;               /* 🔑 ahora overflow-y funciona */
-  overflow-y: auto;           /* ✅ scroll vertical real */
-  overflow-x: hidden;         /* evita scroll horizontal por el hero 100vw */
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
-/* Tu sangría para el contenido debajo del hero */
+.center-cotizacion {
+  overflow: hidden;
+}
+
 .page-padding {
   padding: 24px 32px;
 }
 
-/* opcional: en móvil reduce padding */
 @media (max-width: 768px) {
   .page-padding {
     padding: 18px 16px;

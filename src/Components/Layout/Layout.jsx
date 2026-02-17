@@ -5,7 +5,7 @@ import MegaCotizacion from "./MegaCotizacion.jsx";
 function Layout({ showCotizacion }) {
   return (
     <div className="layout">
-      <div className="center">
+      <div className={`center ${showCotizacion ? "center-cotizacion" : ""}`}>
         {showCotizacion ? <MegaCotizacion /> : <MainContent />}
       </div>
     </div>
