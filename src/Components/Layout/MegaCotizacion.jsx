@@ -89,19 +89,6 @@ function MegaCotizacion() {
           </select>
         </div>
 
-        <div className="mega-chips">
-          {DESTINOS.map((destino) => (
-            <button
-              key={destino.id}
-              type="button"
-              className={`mega-chip ${destinoId === destino.id ? "active" : ""}`}
-              onClick={() => changeDestino(destino.id)}
-            >
-              {destino.label}
-            </button>
-          ))}
-        </div>
-
         <div className="mega-frame-wrap">
           {isLoading && (
             <div className="mega-loader" aria-live="polite">

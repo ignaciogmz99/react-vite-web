@@ -1,19 +1,20 @@
 .mega-wrap {
   width: 100%;
   height: 100%;
-  padding: 0;
+  padding: 10px 14px;
   box-sizing: border-box;
   background: linear-gradient(180deg, #f3f7ff 0%, #f8fbff 55%, #ffffff 100%);
 }
 
 .mega-shell {
   height: 100%;
-  max-width: none;
-  margin: 0;
+  width: 100%;
+  max-width: 980px;
+  margin: 0 auto;
   background: #ffffff;
-  border: 0;
-  border-radius: 0;
-  box-shadow: none;
+  border: 1px solid #dce6f4;
+  border-radius: 14px;
+  box-shadow: 0 10px 28px rgba(16, 49, 92, 0.1);
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -47,7 +48,7 @@
   display: flex;
   align-items: center;
   gap: 10px;
-  padding: 14px 20px 10px;
+  padding: 14px 20px 14px;
   background: #ffffff;
 }
 
@@ -65,40 +66,6 @@
   font-size: 14px;
   color: #17324e;
   background: #f8fbff;
-}
-
-.mega-chips {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  padding: 0 20px 14px;
-  background: #ffffff;
-  border-bottom: 1px solid #e4edf8;
-}
-
-.mega-chip {
-  border: 1px solid #c6d7ec;
-  background: #f6faff;
-  color: #1b3f68;
-  font-size: 13px;
-  font-weight: 600;
-  padding: 9px 12px;
-  border-radius: 999px;
-  cursor: pointer;
-  white-space: nowrap;
-  line-height: 1.1;
-  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
-}
-
-.mega-chip:hover {
-  background: #eaf3ff;
-  border-color: #8fb5e3;
-}
-
-.mega-chip.active {
-  background: #1a73b8;
-  color: #ffffff;
-  border-color: #1a73b8;
 }
 
 .mega-frame-wrap {
@@ -176,20 +143,12 @@
   .mega-controls {
     align-items: flex-start;
     flex-direction: column;
-    padding: 12px 14px 8px;
+    padding: 12px 14px;
   }
 
   .mega-select {
     width: 100%;
     min-width: 0;
-  }
-
-  .mega-chips {
-    padding: 0 14px 10px;
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    border-bottom: 0;
   }
 
   .mega-frame-wrap {
