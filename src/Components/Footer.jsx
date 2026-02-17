@@ -1,19 +1,6 @@
-import { useNavigate, useLocation } from "react-router-dom";
 import "./Footer.css";
 
-function Footer() {
-  const navigate = useNavigate();
-  const location = useLocation();
-
-  const handleViajesClick = () => {
-    if (location.pathname === "/viajes") {
-      navigate("/");
-    } else {
-      navigate("/viajes");
-    }
-  };
-
-  // 🔥 URLs redes sociales (pon las reales luego)
+function Footer({ showCotizacion, onToggleCotizacion }) {
   const openFacebook = () => {
     window.open("https://www.facebook.com/share/1Dj9BDc25m/?mibextid=wwXIfr", "_blank");
   };
@@ -24,11 +11,6 @@ function Footer() {
 
   return (
     <div className="footer">
-
-      {/* <button className="footer-btn viajes" onClick={handleViajesClick}>
-        Viajes ✈️
-      </button> */}
-
       <button className="footer-btn facebook" onClick={openFacebook}>
         Facebook
       </button>
@@ -37,6 +19,12 @@ function Footer() {
         Instagram
       </button>
 
+      <button
+        className={`footer-btn cotizacion ${showCotizacion ? "active" : ""}`}
+        onClick={onToggleCotizacion}
+      >
+        Cotización
+      </button>
     </div>
   );
 }

@@ -1,4 +1,5 @@
 import "./App.css";
+import { useState } from "react";
 
 import { BrowserRouter } from "react-router-dom";
 
@@ -7,6 +8,12 @@ import Navbar from "./Components/Navbar";
 import Footer from "./Components/Footer";
 
 function App() {
+  const [showCotizacion, setShowCotizacion] = useState(false);
+
+  const handleToggleCotizacion = () => {
+    setShowCotizacion((prev) => !prev);
+  };
+
   return (
     <BrowserRouter>
       <div className="Principal">
@@ -14,10 +21,13 @@ function App() {
           <Navbar />
         </div>
         <div className="Layout">
-          <Layout />
+          <Layout showCotizacion={showCotizacion} />
         </div>
         <div className="Footer">
-          <Footer />
+          <Footer
+            showCotizacion={showCotizacion}
+            onToggleCotizacion={handleToggleCotizacion}
+          />
         </div>
       </div>
     </BrowserRouter>

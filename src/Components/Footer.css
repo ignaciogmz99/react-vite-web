@@ -31,6 +31,14 @@
   background: #e1306c;
 }
 
+.cotizacion {
+  background: #1f9d55;
+}
+
+.cotizacion.active {
+  background: #157347;
+}
+
 .footer-btn:hover {
   transform: scale(1.05);
   opacity: 0.9;

@@ -1,13 +1,12 @@
 import "./Layout.css";
-import { Routes, Route } from "react-router-dom";
-
 import MainContent from "./MainContent.jsx";
+import MegaCotizacion from "./MegaCotizacion.jsx";
 
-function Layout() {
+function Layout({ showCotizacion }) {
   return (
     <div className="layout">
       <div className="center">
-        <MainContent/>
+        {showCotizacion ? <MegaCotizacion /> : <MainContent />}
       </div>
     </div>
   );
