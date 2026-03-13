@@ -120,6 +120,17 @@ function Mapamundi() {
 
       <div className="mapamundi-grid">
         <div className="world-card">
+          <div className="card-topline">
+            <div>
+              <p className="card-kicker">Vista global</p>
+              <h3 className="card-title">Mapa termico del mes</h3>
+            </div>
+            <div className="card-badge">
+              <span>{MONTHS[selectedMonthIndex]}</span>
+              <strong>{selectedCountry.country}</strong>
+            </div>
+          </div>
+
           <div className="world-map-shell">
             <WorldMap
               backgroundColor="#edf4ff"
@@ -172,6 +183,10 @@ function Mapamundi() {
             {MONTHS[selectedMonthIndex].toLowerCase()}: {selectedCountry.monthlyTemperatureC[selectedMonthIndex]} C.
           </p>
 
+          <div className="panel-section-head">
+            <span className="section-pill">Resumen rapido</span>
+          </div>
+
           <div className="climate-summary">
             <div>
               <span>Llegadas 2024</span>
@@ -189,6 +204,11 @@ function Mapamundi() {
               <span>Criterio</span>
               <strong>Temperatura moderada</strong>
             </div>
+          </div>
+
+          <div className="panel-section-head panel-section-head-spaced">
+            <span className="section-pill">Comportamiento anual</span>
+            <span className="section-caption">Seleccion del pais actual</span>
           </div>
 
           <div className="month-list">

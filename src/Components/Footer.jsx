@@ -30,7 +30,7 @@ function Footer({ activeView, onToggleCotizacion, onToggleMapamundi }) {
       </button>
 
       <button
-        className={`footer-btn mapamundi ${activeView === "mapamundi" ? "active" : ""}`}
+        className={`footer-btn mapamundi-btn ${activeView === "mapamundi" ? "active" : ""}`}
         onClick={onToggleMapamundi}
       >
         Mapamundi

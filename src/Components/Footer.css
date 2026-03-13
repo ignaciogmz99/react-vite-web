@@ -39,11 +39,11 @@
   background: #157347;
 }
 
-.mapamundi {
+.mapamundi-btn {
   background: #0f766e;
 }
 
-.mapamundi.active {
+.mapamundi-btn.active {
   background: #115e59;
 }
 
