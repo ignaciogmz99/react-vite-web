@@ -94,7 +94,8 @@ function Mapamundi() {
   }, [selectedCountry]);
 
   return (
-    <section className="mapamundi page-padding">
+    <section className="mapamundi-shell">
+      <div className="mapamundi">
       <div className="mapamundi-hero">
         <div className="mapamundi-copyblock">
           <p className="mapamundi-kicker">Top 100 paises mas visitados</p>
@@ -241,6 +242,7 @@ function Mapamundi() {
             historicos por pais. La mejor epoca se infiere por confort termico.
           </p>
         </aside>
+      </div>
       </div>
     </section>
   );

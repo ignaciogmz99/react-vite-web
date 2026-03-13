@@ -10,12 +10,16 @@ import Footer from "./Components/Footer";
 function App() {
   const [activeView, setActiveView] = useState("home");
 
+  const handleGoHome = () => {
+    setActiveView("home");
+  };
+
   const handleToggleCotizacion = () => {
-    setActiveView((prev) => (prev === "cotizacion" ? "home" : "cotizacion"));
+    setActiveView("cotizacion");
   };
 
   const handleToggleMapamundi = () => {
-    setActiveView((prev) => (prev === "mapamundi" ? "home" : "mapamundi"));
+    setActiveView("mapamundi");
   };
 
   return (
@@ -30,6 +34,7 @@ function App() {
         <div className="Footer">
           <Footer
             activeView={activeView}
+            onGoHome={handleGoHome}
             onToggleCotizacion={handleToggleCotizacion}
             onToggleMapamundi={handleToggleMapamundi}
           />

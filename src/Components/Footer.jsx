@@ -1,6 +1,6 @@
 import "./Footer.css";
 
-function Footer({ activeView, onToggleCotizacion, onToggleMapamundi }) {
+function Footer({ activeView, onGoHome, onToggleCotizacion, onToggleMapamundi }) {
   const openFacebook = () => {
     window.open("https://www.facebook.com/share/1Dj9BDc25m/?mibextid=wwXIfr", "_blank");
   };
@@ -20,6 +20,13 @@ function Footer({ activeView, onToggleCotizacion, onToggleMapamundi }) {
 
       <button className="footer-btn instagram" onClick={openInstagram}>
         Instagram
+      </button>
+
+      <button
+        className={`footer-btn casa ${activeView === "home" ? "active" : ""}`}
+        onClick={onGoHome}
+      >
+        Casa
       </button>
 
       <button

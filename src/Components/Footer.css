@@ -31,6 +31,14 @@
   background: #e1306c;
 }
 
+.casa {
+  background: #163f73;
+}
+
+.casa.active {
+  background: #0f2d54;
+}
+
 .cotizacion {
   background: #1f9d55;
 }

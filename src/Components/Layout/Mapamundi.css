@@ -1,4 +1,12 @@
+.mapamundi-shell {
+  width: 100%;
+  padding: 24px 32px;
+  background: #ffffff;
+}
+
 .mapamundi {
+  max-width: 1180px;
+  margin: 0 auto;
   min-height: 100%;
   box-sizing: border-box;
   padding-top: 18px;
@@ -80,20 +88,20 @@
   margin-bottom: 24px;
   padding: 16px 18px;
   border-radius: 22px;
-  background: linear-gradient(180deg, #f8fbff 0%, #f2f6fb 100%);
-  border: 1px solid #d8e2ef;
-  box-shadow: 0 14px 30px rgba(15, 23, 42, 0.06);
+  background: linear-gradient(180deg, #eef5fc 0%, #e4eef9 100%);
+  border: 1px solid #b7cde6;
+  box-shadow: 0 14px 30px rgba(22, 63, 115, 0.08);
 }
 
 .month-pill {
-  border: 1px solid #c5d1e0;
-  background: #ffffff;
-  color: #33527a;
+  border: 1px solid #b7cce4;
+  background: linear-gradient(180deg, #ffffff 0%, #f3f8fd 100%);
+  color: #214a7a;
   border-radius: 999px;
   padding: 10px 14px;
   font-weight: 700;
   cursor: pointer;
-  box-shadow: 0 6px 16px rgba(15, 23, 42, 0.05);
+  box-shadow: 0 6px 16px rgba(22, 63, 115, 0.08);
   transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
 }
 
@@ -117,11 +125,11 @@
 
 .world-card,
 .climate-card {
-  background: linear-gradient(180deg, #ffffff 0%, #f9fbfd 100%);
-  border: 1px solid #dde6f0;
+  background: linear-gradient(180deg, #ffffff 0%, #edf4fb 100%);
+  border: 1px solid #bed2e8;
   border-radius: 24px;
   padding: 22px;
-  box-shadow: 0 18px 44px rgba(15, 23, 42, 0.08);
+  box-shadow: 0 18px 44px rgba(22, 63, 115, 0.1);
   backdrop-filter: blur(8px);
 }
 
@@ -156,9 +164,9 @@
   min-width: 150px;
   padding: 10px 14px;
   border-radius: 16px;
-  background: linear-gradient(180deg, #f8fbff 0%, #eef4fb 100%);
-  border: 1px solid #d6e1ee;
-  box-shadow: 0 8px 18px rgba(15, 23, 42, 0.05);
+  background: linear-gradient(180deg, #e9f2fc 0%, #dde9f7 100%);
+  border: 1px solid #bcd2ea;
+  box-shadow: 0 8px 18px rgba(22, 63, 115, 0.08);
 }
 
 .card-badge span {
@@ -179,8 +187,8 @@
   position: relative;
   border-radius: 18px;
   overflow: hidden;
-  background: #edf4ff;
-  border: 1px solid #cfddec;
+  background: #dfeaf8;
+  border: 1px solid #b2cae4;
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.85);
 }
 
@@ -254,7 +262,7 @@
   align-items: center;
   padding: 7px 12px;
   border-radius: 999px;
-  background: #eef4fb;
+  background: #dfeaf7;
   color: #163f73;
   font-size: 0.8rem;
   font-weight: 700;
@@ -276,9 +284,9 @@
 .climate-summary div {
   padding: 14px;
   border-radius: 16px;
-  background: linear-gradient(180deg, #ffffff 0%, #f6f9fc 100%);
-  border: 1px solid #dbe5ef;
-  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.04);
+  background: linear-gradient(180deg, #ffffff 0%, #eaf2fb 100%);
+  border: 1px solid #bdd3e8;
+  box-shadow: 0 8px 20px rgba(22, 63, 115, 0.06);
 }
 
 .climate-summary span {
@@ -299,15 +307,15 @@
 
 .month-card {
   border-radius: 16px;
-  background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
-  border: 1px solid #dbe5ef;
+  background: linear-gradient(180deg, #ffffff 0%, #eaf2fb 100%);
+  border: 1px solid #bed3e8;
   padding: 12px 14px;
-  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.04);
+  box-shadow: 0 8px 20px rgba(22, 63, 115, 0.06);
 }
 
 .month-card.recommended {
-  background: linear-gradient(180deg, #eef7ff 0%, #f7fbff 100%);
-  border-color: #9cc2ea;
+  background: linear-gradient(180deg, #dceaf8 0%, #eef5fc 100%);
+  border-color: #7faedc;
 }
 
 .month-head,
@@ -331,7 +339,7 @@
 .month-bar {
   height: 8px;
   border-radius: 999px;
-  background: #dbeafe;
+  background: #cadef3;
   overflow: hidden;
 }
 
@@ -364,6 +372,10 @@
 }
 
 @media (max-width: 640px) {
+  .mapamundi-shell {
+    padding: 18px 16px;
+  }
+
   .mapamundi {
     padding-top: 12px;
     padding-bottom: 18px;
