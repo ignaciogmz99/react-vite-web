@@ -4,6 +4,20 @@ import topVisitedClimate from "../../data/topVisitedClimate.json";
 import "./Mapamundi.css";
 
 const MONTHS = ["Ene", "Feb", "Mar", "Abr", "May", "Jun", "Jul", "Ago", "Sep", "Oct", "Nov", "Dic"];
+const FULL_MONTHS = [
+  "Enero",
+  "Febrero",
+  "Marzo",
+  "Abril",
+  "Mayo",
+  "Junio",
+  "Julio",
+  "Agosto",
+  "Septiembre",
+  "Octubre",
+  "Noviembre",
+  "Diciembre",
+];
 
 function getComfortScore(temp) {
   const comfortPenalty = Math.abs(temp - 22) * 3;
@@ -53,7 +67,6 @@ function Mapamundi() {
 
   const [selectedCountryCode, setSelectedCountryCode] = useState("fr");
   const [selectedMonthIndex, setSelectedMonthIndex] = useState(4);
-  const [showBestOnly, setShowBestOnly] = useState(false);
 
   const selectedCountry =
     countries.find((country) => country.cca2 === selectedCountryCode) ??
@@ -77,8 +90,8 @@ function Mapamundi() {
       recommended: selectedCountry.bestMonths.some((item) => item.month === month),
     }));
 
-    return showBestOnly ? months.filter((item) => item.recommended) : months;
-  }, [selectedCountry, showBestOnly]);
+    return months;
+  }, [selectedCountry]);
 
   return (
     <section className="mapamundi page-padding">
@@ -87,21 +100,14 @@ function Mapamundi() {
           <p className="mapamundi-kicker">Top 100 paises mas visitados</p>
           <h2>Mapa de calor mensual con base local de temperatura historica</h2>
           <p className="mapamundi-copy">
-            El mapa ahora cubre 100 paises del ranking de llegadas turisticas y pinta cada pais por su
-            temperatura promedio del mes seleccionado. La recomendacion se infiere por confort termico.
+            Explora de forma visual como cambia la temperatura promedio en los destinos mas visitados
+            del mundo y descubre en que meses cada pais ofrece un clima mas agradable para viajar.
           </p>
         </div>
 
         <div className="mapamundi-actions">
           <p className="mapamundi-month-caption">Mes activo</p>
-          <strong className="mapamundi-month-name">{MONTHS[selectedMonthIndex]}</strong>
-          <button
-            type="button"
-            className={`season-btn ${showBestOnly ? "active" : ""}`}
-            onClick={() => setShowBestOnly((prev) => !prev)}
-          >
-            Mejor epoca para viajar
-          </button>
+          <strong className="mapamundi-month-name">{FULL_MONTHS[selectedMonthIndex]}</strong>
         </div>
       </div>
 
