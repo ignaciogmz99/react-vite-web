@@ -39,6 +39,14 @@
   background: #157347;
 }
 
+.mapamundi {
+  background: #0f766e;
+}
+
+.mapamundi.active {
+  background: #115e59;
+}
+
 .footer-btn:hover {
   transform: scale(1.05);
   opacity: 0.9;

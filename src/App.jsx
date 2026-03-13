@@ -8,10 +8,14 @@ import Navbar from "./Components/Navbar";
 import Footer from "./Components/Footer";
 
 function App() {
-  const [showCotizacion, setShowCotizacion] = useState(false);
+  const [activeView, setActiveView] = useState("home");
 
   const handleToggleCotizacion = () => {
-    setShowCotizacion((prev) => !prev);
+    setActiveView((prev) => (prev === "cotizacion" ? "home" : "cotizacion"));
+  };
+
+  const handleToggleMapamundi = () => {
+    setActiveView((prev) => (prev === "mapamundi" ? "home" : "mapamundi"));
   };
 
   return (
@@ -21,12 +25,13 @@ function App() {
           <Navbar />
         </div>
         <div className="Layout">
-          <Layout showCotizacion={showCotizacion} />
+          <Layout activeView={activeView} />
         </div>
         <div className="Footer">
           <Footer
-            showCotizacion={showCotizacion}
+            activeView={activeView}
             onToggleCotizacion={handleToggleCotizacion}
+            onToggleMapamundi={handleToggleMapamundi}
           />
         </div>
       </div>
