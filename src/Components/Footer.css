@@ -11,7 +11,7 @@
 .footer-btn {
   border: none;
   padding: 12px 18px;
-  min-width: 132px;
+  width: 132px;
   min-height: 46px;
   border-radius: 10px;
   cursor: pointer;
@@ -22,6 +22,7 @@
   align-items: center;
   justify-content: center;
   text-align: center;
+  flex: 0 0 auto;
 }
 
 /* botón viajes */
@@ -68,20 +69,28 @@
   opacity: 0.9;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1180px) {
   .footer {
     justify-content: flex-start;
+    width: 100%;
+    box-sizing: border-box;
     overflow-x: auto;
     overflow-y: hidden;
     -webkit-overflow-scrolling: touch;
     scrollbar-width: thin;
     scroll-behavior: smooth;
+    padding-left: 16px;
+    padding-right: 16px;
   }
 
   .footer-btn {
-    flex: 0 0 auto;
-    min-width: 120px;
+    width: 132px;
     padding: 12px 16px;
+  }
+
+  .footer::after {
+    content: "";
+    flex: 0 0 1px;
   }
 
   .footer::-webkit-scrollbar {
