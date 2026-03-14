@@ -3,17 +3,25 @@
   justify-content: center;
   gap: 16px;
   padding: 18px;
+  padding-bottom: calc(18px + env(safe-area-inset-bottom, 0px));
+  background: #ffffff;
 }
 
 /* 🔹 estilo base tipo Viajes */
 .footer-btn {
   border: none;
   padding: 12px 18px;
+  min-width: 132px;
+  min-height: 46px;
   border-radius: 10px;
   cursor: pointer;
   font-weight: 600;
   color: white;
   transition: 0.25s;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
 /* botón viajes */
@@ -58,4 +66,35 @@
 .footer-btn:hover {
   transform: scale(1.05);
   opacity: 0.9;
+}
+
+@media (max-width: 768px) {
+  .footer {
+    justify-content: flex-start;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+    scroll-behavior: smooth;
+  }
+
+  .footer-btn {
+    flex: 0 0 auto;
+    min-width: 120px;
+    padding: 12px 16px;
+  }
+
+  .footer::-webkit-scrollbar {
+    height: 8px;
+  }
+
+  .footer::-webkit-scrollbar-thumb {
+    background: rgba(22, 63, 115, 0.22);
+    border-radius: 999px;
+  }
+
+  .footer::-webkit-scrollbar-track {
+    background: rgba(191, 211, 234, 0.35);
+    border-radius: 999px;
+  }
 }
