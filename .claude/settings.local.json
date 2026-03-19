@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(grep -r \"AKIA\\\\|password\\\\|secret\\\\|token\\\\|api_key\\\\|API_KEY\\\\|access_key\\\\|BEGIN RSA\\\\|BEGIN PRIVATE\" /c/react-agency --include=*.js --include=*.jsx --include=*.ts --include=*.tsx --include=*.json --include=*.env* --exclude-dir=node_modules --exclude-dir=.git)",
+      "Bash(git -C /c/react-agency log --all -p)"
+    ]
+  }
+}

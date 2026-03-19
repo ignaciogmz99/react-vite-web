@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(grep -rE \"\\(\\\\+?[0-9\\\\-\\\\\\(\\\\\\) ]{10,}|[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\\\.[a-zA-Z]{2,}\\)\" /c/react-agency/src --include=*.jsx --include=*.js)"
+    ]
+  }
+}
