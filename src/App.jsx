@@ -5,7 +5,7 @@ import { BrowserRouter } from "react-router-dom";
 
 import Layout from "./Components/Layout/Layout";
 import Navbar from "./Components/Navbar";
-import Footer from "./Components/Footer";
+// import Footer from "./Components/Footer";
 
 function App() {
   const [activeView, setActiveView] = useState("home");
@@ -26,11 +26,17 @@ function App() {
     <BrowserRouter>
       <div className="Principal">
         <div className="Navbar">
-          <Navbar />
+          <Navbar
+            activeView={activeView}
+            onGoHome={handleGoHome}
+            onToggleCotizacion={handleToggleCotizacion}
+            onToggleMapamundi={handleToggleMapamundi}
+          />
         </div>
         <div className="Layout">
           <Layout activeView={activeView} />
         </div>
+        {/* Footer navigation moved into the navbar hamburger menu.
         <div className="Footer">
           <Footer
             activeView={activeView}
@@ -39,6 +45,7 @@ function App() {
             onToggleMapamundi={handleToggleMapamundi}
           />
         </div>
+        */}
       </div>
     </BrowserRouter>
   );

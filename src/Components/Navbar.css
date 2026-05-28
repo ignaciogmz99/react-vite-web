@@ -1,19 +1,49 @@
-/* =========================
-   NAVBAR BASE
-========================= */
 .navbar {
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 18px;
   background-color: #163f73;
   padding: 12px 24px;
-  color: white;
+  color: #ffffff;
 }
 
 .navbar-left {
+  position: relative;
   display: flex;
   align-items: center;
   gap: 12px;
+}
+
+.menu-item-popover {
+  position: relative;
+}
+
+.menu-item-popover--hamburger {
+  flex-shrink: 0;
+}
+
+.logo-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: transparent;
+  border-radius: 14px;
+  padding: 6px;
+  cursor: pointer;
+  transition: background-color 0.25s ease, transform 0.25s ease;
+}
+
+.logo-button:hover,
+.logo-button:focus-visible {
+  background: rgba(255, 255, 255, 0.12);
+  outline: none;
+}
+
+.logo-button.is-home {
+  background: rgba(255, 255, 255, 0.08);
 }
 
 .logo {
@@ -21,132 +51,216 @@
   display: block;
 }
 
-.subtitle {
-  font-size: 18px;
+.hamburger-btn {
+  width: 44px;
+  height: 44px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.08);
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  cursor: pointer;
+  padding: 0;
+  transition: background-color 0.25s ease, transform 0.25s ease;
 }
 
-/* =========================
-   MENU (BOTONES EN LÍNEA)
-========================= */
+.hamburger-btn:hover,
+.hamburger-btn:focus-visible,
+.hamburger-btn.is-open {
+  background: rgba(255, 255, 255, 0.16);
+  outline: none;
+}
+
+.hamburger-btn-bar {
+  width: 18px;
+  height: 2px;
+  border-radius: 999px;
+  background: #ffffff;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+.hamburger-btn.is-open .hamburger-btn-bar:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.hamburger-btn.is-open .hamburger-btn-bar:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger-btn.is-open .hamburger-btn-bar:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
 .navbar-menu {
   list-style: none;
   display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
   gap: 18px;
   margin: 0;
+  margin-left: auto;
   padding: 0;
   align-items: center;
 }
 
-/* cada item sirve de ancla para el popover en desktop */
-.menu-item-popover {
-  position: relative;
-}
-
-/* texto clickeable */
 .menu-text-trigger {
+  border: none;
+  background: transparent;
+  padding: 0;
   cursor: pointer;
   font-weight: 500;
   font-size: 18px;
+  color: #ffffff;
   transition: color 0.25s ease;
   user-select: none;
 }
 
-/* ⭐ HOVER DORADO */
-.menu-text-trigger:hover {
+.menu-text-trigger:hover,
+.menu-text-trigger:focus-visible {
   color: #f5c542;
+  outline: none;
 }
 
-/* =========================
-   POPOVER (DESKTOP)
-========================= */
 .menu-popover {
   position: absolute;
-  top: 55px;
+  top: 72px;
   right: 0;
-
-  background: #fff;
-  color: #000;
-
+  background: #ffffff;
+  color: #000000;
   width: 320px;
   padding: 16px;
-
   border-radius: 12px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-
   z-index: 100;
 }
 
-/* Botón cerrar */
+.menu-popover--hamburger {
+  top: calc(100% + 28px);
+  left: 0;
+  right: auto;
+  width: 250px;
+}
+
+.menu-popover--right-panel {
+  position: fixed;
+  top: 104px;
+  left: auto;
+  right: 24px;
+  width: min(320px, calc(100vw - 48px));
+  max-width: calc(100vw - 48px);
+}
+
+@media (max-width: 760px) {
+  .menu-popover--right-panel {
+    right: 32px;
+    width: min(300px, calc(100vw - 72px));
+    max-width: calc(100vw - 72px);
+  }
+}
+
 .menu-close {
   position: absolute;
   top: 8px;
   right: 10px;
-
   background: none;
   border: none;
-
   font-size: 22px;
   cursor: pointer;
   line-height: 1;
 }
 
-/* Título */
 .menu-popover-title {
   font-weight: 800;
   margin-bottom: 12px;
 }
 
-/* Contenido */
 .menu-popover-body {
   display: flex;
   flex-direction: column;
   gap: 14px;
 }
 
-/* filas */
 .menu-row {
   display: flex;
   align-items: flex-start;
   gap: 12px;
 }
 
-/* iconos */
 .menu-icon {
   font-size: 28px;
   line-height: 1.2;
 }
 
-/* texto */
 .menu-subtext {
   font-size: 16px;
-  color: #444;
+  color: #444444;
   margin-top: 2px;
 }
 
-/* link */
 .menu-link {
   display: inline-block;
   text-decoration: none;
   font-weight: 700;
-  color: purple;
+  color: #6b21a8;
 }
 
 .menu-link:hover {
   text-decoration: underline;
 }
 
-/* =========================
-   OVERLAY (para móvil/UX)
-   (Recuerda: en JSX debe existir <div className="nav-overlay" /> cuando open != null)
-========================= */
+.menu-action {
+  width: 100%;
+  border: none;
+  border-radius: 12px;
+  padding: 12px 16px;
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 700;
+  text-align: center;
+  text-decoration: none;
+  box-sizing: border-box;
+  transition: transform 0.25s ease, opacity 0.25s ease, box-shadow 0.25s ease;
+}
 
+.menu-action:hover,
+.menu-action:focus-visible {
+  transform: translateY(-1px);
+  opacity: 0.95;
+  outline: none;
+}
 
-/* =========================
-   RESPONSIVE / MÓVIL
-========================= */
-@media (max-width: 768px) {
+.menu-action.is-active {
+  box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.8);
+}
+
+.menu-action--facebook {
+  background: #1877f2;
+}
+
+.menu-action--instagram {
+  background: #e1306c;
+}
+
+.menu-action--cotizacion {
+  background: #1f9d55;
+}
+
+.menu-action--mapamundi {
+  background: #0f766e;
+}
+
+@media (max-width: 620px) {
   .navbar {
     padding: 10px 12px;
+    align-items: center;
+  }
+
+  .navbar-left {
+    gap: 10px;
   }
 
   .logo {
@@ -154,41 +268,49 @@
   }
 
   .navbar-menu {
-    gap: 12px;
+    gap: 10px 12px;
+    justify-content: flex-end;
   }
 
   .menu-text-trigger {
     font-size: 16px;
   }
 
-  /* ✅ En móvil, el popover se comporta como modal/sheet y NUNCA se sale */
- .menu-popover {
+  .menu-popover {
     position: fixed;
-    top: calc(64px + env(safe-area-inset-top, 0px));
-    left: 50%;
-    transform: translateX(-50%);
-
-    /* ✅ ancho “según contenido” */
-    width: fit-content;
-    max-width: calc(100vw - 24px); /* nunca se sale */
-    
-    /* ✅ alto compacto con límite */
+    top: calc(82px + env(safe-area-inset-top, 0px));
+    left: 12px;
+    right: auto;
+    transform: none;
+    width: min(320px, calc(100vw - 24px));
     max-height: 70dvh;
     overflow: auto;
     -webkit-overflow-scrolling: touch;
-
     padding: 14px 16px;
     border-radius: 14px;
     z-index: 9999;
   }
 
-  /* botón cerrar más “toucheable” */
+  .menu-popover--hamburger {
+    left: 12px;
+    right: auto;
+    width: min(280px, calc(100vw - 24px));
+  }
+
+  .menu-popover--right-panel {
+    position: fixed;
+    top: calc(82px + env(safe-area-inset-top, 0px));
+    left: auto;
+    right: 24px;
+    width: min(300px, calc(100vw - 56px));
+    max-width: calc(100vw - 56px);
+  }
+
   .menu-close {
     font-size: 26px;
     padding: 6px 10px;
   }
 
-  /* texto largo no rompe el modal */
   .menu-subtext {
     word-break: break-word;
     overflow-wrap: anywhere;
